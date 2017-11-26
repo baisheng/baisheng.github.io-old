@@ -219,7 +219,7 @@ a:hover, a:focus {
 body {
   background: #0d19a3;
   color: #FFFFFF;
-  font-family: PingFang SC,Helvetica Neue,Helvetica,Arial,Hiragino Sans GB,Microsoft Yahei,\\5FAE\8F6F\96C5\9ED1,STHeiti,\\534E\6587\7EC6\9ED1,sans-serif;
+  font-family: Nunito, PingFang SC,Helvetica Neue,Helvetica,Arial,Hiragino Sans GB,Microsoft Yahei,\\5FAE\8F6F\96C5\9ED1,STHeiti,\\534E\6587\7EC6\9ED1,sans-serif;
   /*font-family: 'Zilla Slab', 'Helvetica Neue', Helvetica, 'Segoe UI', Arial, sans-serif;*/
   font-size: 2.4em;
   letter-spacing: 2px;
@@ -277,10 +277,9 @@ span.project-title {
 
 span.work-dates {
   font-family: Nunito, sans-serif;
-  color: #28ffbfcc;
+  color: #28ffbf;
   display: block;
-  font-size: .5em;
-  font-weight: 500;
+  font-size: .55em;
   margin: 15px 0
 }
 
@@ -331,7 +330,7 @@ video.labnol, img.labnol {
 
 @media screen and (max-width: 500px) {
   body {
-    font-size: 1.1em
+    font-size: 1.25em
   }
 
   .page-title {
@@ -352,7 +351,7 @@ video.labnol, img.labnol {
   }
 
   span.work-dates {
-    font-size: .6em;
+    font-size: .75em;
   }
 
   video.labnol, img.labnol {
