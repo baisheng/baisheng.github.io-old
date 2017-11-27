@@ -1,24 +1,45 @@
 'use strict'
 
-const gulp = require('gulp')
-const watch = require('gulp-watch')
-const rigger = require('gulp-rigger')
-const browserSync = require('browser-sync')
-const prettify = require('gulp-jsbeautifier')
-const download = require('gulp-download-stream')
-const rename = require('gulp-rename')
-const jsonTransform = require('gulp-json-transform')
-const Showdown = require('showdown')
+const gulp = require('gulp'),
+      newer = require('gulp-newer'),
+      imagemin = require('gulp-imagemin'),
+      sass = require('gulp-sass'),
+      sourcemaps = require('gulp-sourcemaps'),
+      autoprefixer = require('gulp-autoprefixer'),
+      cssnano = require('gulp-cssnano'),
+      rename = require('gulp-rename'),
+      concat = require('gulp-concat'),
+      uglify = require('gulp-uglify'),
+      watch = require('gulp-watch'),
+      rigger = require('gulp-rigger'),
+      prettify = require('gulp-jsbeautifier'),
+      browserSync = require('browser-sync')
+// const gulp = require('gulp')
+// const watch = require('gulp-watch')
+// const rigger = require('gulp-rigger')
+// const browserSync = require('browser-sync')
+// const prettify = require('gulp-jsbeautifier')
+// const download = require('gulp-download-stream')
+// const rename = require('gulp-rename')
+// const jsonTransform = require('gulp-json-transform')
+// const Showdown = require('showdown')
 
+// const folder = {
+  // src: 'src/',    // source files
+  // dist: 'dist/'
+// }
 const path = {
   build: { // production
-    html: './'
+    html: './',
+    css: './css'
   },
   src: { // development
-    html: 'src/*.html'
+    html: 'src/*.html',
+    scss: 'src/scss/slides.scss'
   },
   watch: {
-    html: 'src/**/*.html'
+    html: 'src/**/*.html',
+    scss: 'src/scss/**/*'
   }
 }
 
@@ -53,6 +74,28 @@ gulp.task('html:build', () => {
 })
 
 /* =====================================================
+ CSS
+ ===================================================== */
+gulp.task('css', () => {
+  console.log(path.src.scss)
+  return gulp.src(path.src.scss)
+      .pipe(sourcemaps.init())
+      .pipe(sass()) // scss to css
+      .pipe(autoprefixer({
+        browsers: ['last 2 version']
+      }))
+      .pipe(gulp.dest(path.build.css))
+      .pipe(rename({ // rename main.css to main.min.css
+        suffix: '.min'
+      }))
+      .pipe(cssnano({ // minify css
+        discardComments: {removeAllButFirst: true}
+      }))
+      .pipe(sourcemaps.write('./')) // source mpas for main.min.css
+      .pipe(gulp.dest(path.build.css))
+})
+
+/* =====================================================
  RELEASES
  ===================================================== */
 
@@ -78,8 +121,9 @@ gulp.task('build', ['html:build'])
  ===================================================== */
 
 gulp.task('watch', () => {
-  watch([path.watch.html], (event, cb) => {
-    gulp.start('html:build')
+  watch([path.watch.html, path.watch.scss], (event, cb) => {
+    gulp.start('html:build'),
+    gulp.start('css')
   })
 })
 
@@ -87,4 +131,5 @@ gulp.task('watch', () => {
  DEFAULT TASK
  ===================================================== */
 
-gulp.task('default', ['download:gitawards', 'build', 'webserver', 'watch'])
+// gulp.task('default', ['download:gitawards','build', 'webserver', 'watch'])
+gulp.task('default', ['build', 'webserver', 'watch'])
