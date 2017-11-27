@@ -21,6 +21,7 @@
     "gulp-sourcemaps": "^2.6.1",
     "gulp-uglify": "^3.0.0",
     "gulp-watch": "^4.3.11",
+    "material-design-icons": "^3.0.1",
     "sass-lint": "^1.12.1",
     "showdown": "^1.7.1"
   },
