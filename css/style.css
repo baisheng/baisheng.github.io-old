@@ -1717,8 +1717,8 @@ body {
 .start-animation {
   -webkit-animation-name: dot-move;
   animation-name: dot-move;
-  -webkit-animation-duration: .8s;
-  animation-duration: .8s;
+  -webkit-animation-duration: 1.5s;
+  animation-duration: 1.5s;
   -webkit-animation-delay: 0s;
   animation-delay: 0s;
   -webkit-animation-iteration-count: infinite;
@@ -1737,14 +1737,14 @@ body {
     animation-timing-function: linear;
   }
   25% {
-    -webkit-transform: translateY(-80%);
-    transform: translateY(-80%);
+    -webkit-transform: translateY(-10%);
+    transform: translateY(-10%);
     -webkit-animation-timing-function: linear;
     animation-timing-function: linear;
   }
   75% {
-    -webkit-transform: translateY(80%);
-    transform: translateY(80%);
+    -webkit-transform: translateY(10%);
+    transform: translateY(10%);
     -webkit-animation-timing-function: linear;
     animation-timing-function: linear;
   }
@@ -1760,14 +1760,14 @@ body {
     animation-timing-function: linear;
   }
   25% {
-    -webkit-transform: translateY(-80%);
-    transform: translateY(-80%);
+    -webkit-transform: translateY(-10%);
+    transform: translateY(-10%);
     -webkit-animation-timing-function: linear;
     animation-timing-function: linear;
   }
   75% {
-    -webkit-transform: translateY(80%);
-    transform: translateY(80%);
+    -webkit-transform: translateY(20%);
+    transform: translateY(20%);
     -webkit-animation-timing-function: linear;
     animation-timing-function: linear;
   }
