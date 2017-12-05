@@ -248,11 +248,11 @@ $(document).ready(function () {
   });
 
 
-  $(document).on('click', '.requestBtn', function (e) {
-    e.preventDefault();
-    $('body').addClass('showForm');
-    return false;
-  });
+  // $(document).on('click', '.requestBtn', function (e) {
+  //   e.preventDefault();
+  //   $('body').addClass('showForm');
+  //   return false;
+  // });
 
   $(document).on('click', '.hideForm', function (e) {
     e.preventDefault();
