@@ -1699,6 +1699,80 @@ body {
     height: 64px
 }
 
+/*.atail-preloader .atail-dot {*/
+  /*background-color: white;*/
+/*}*/
+
+.preloader-dot {
+  position: relative;
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  margin: 0 2px;
+  border: 1px solid transparent;
+  border-radius: 50%;
+  background-color: blue;
+}
+
+.start-animation {
+  -webkit-animation-name: dot-move;
+  animation-name: dot-move;
+  -webkit-animation-duration: .8s;
+  animation-duration: .8s;
+  -webkit-animation-delay: 0s;
+  animation-delay: 0s;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+}
+
+@-webkit-keyframes dot-move {
+  0%,
+  50%,
+  100% {
+    -webkit-transform: translateY(0%);
+    transform: translateY(0%);
+    -webkit-animation-timing-function: linear;
+    animation-timing-function: linear;
+  }
+  25% {
+    -webkit-transform: translateY(-80%);
+    transform: translateY(-80%);
+    -webkit-animation-timing-function: linear;
+    animation-timing-function: linear;
+  }
+  75% {
+    -webkit-transform: translateY(80%);
+    transform: translateY(80%);
+    -webkit-animation-timing-function: linear;
+    animation-timing-function: linear;
+  }
+}
+
+@keyframes dot-move {
+  0%,
+  50%,
+  100% {
+    -webkit-transform: translateY(0%);
+    transform: translateY(0%);
+    -webkit-animation-timing-function: linear;
+    animation-timing-function: linear;
+  }
+  25% {
+    -webkit-transform: translateY(-80%);
+    transform: translateY(-80%);
+    -webkit-animation-timing-function: linear;
+    animation-timing-function: linear;
+  }
+  75% {
+    -webkit-transform: translateY(80%);
+    transform: translateY(80%);
+    -webkit-animation-timing-function: linear;
+    animation-timing-function: linear;
+  }
+}
+
 .preloader .st1 {
     fill: #fff
 }
