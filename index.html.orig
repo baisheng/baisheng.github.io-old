@@ -507,7 +507,11 @@
                             </div>
                         </div>
                         <div class="cover"
+<<<<<<< HEAD
                              style="background-image: url(./projects/facial/facial_cover.png);
+=======
+                             style="background-image: url(./img/facial.png);
+>>>>>>> coding/master
                         box-shadow: 0 10px 60px 0 rgba(0, 0, 0, 0.4);">
                             <a class="showTrigger" href="/portfolio/facial">
                             </a>
