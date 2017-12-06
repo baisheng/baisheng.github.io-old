@@ -1391,7 +1391,7 @@ section.portfolio .projects .project.active .hiddenInfo .content img + h1, secti
 
 section.portfolio .projects .project.active .hiddenInfo .content p {
     font-size: 14px;
-    font-weight: 300;
+    font-weight: 600;
     text-align: justify;
     line-height: 30px;
     letter-spacing: 2px;
